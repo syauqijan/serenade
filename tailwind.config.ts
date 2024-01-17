@@ -13,6 +13,22 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      linearGradientColors: {
+        // Definisikan variabel gradient-horizontal dengan tiga warna
+        'gradient-horizontal': ['primary', 'secondary', 'var(--quaternary)'],
+      },
+      fontFamily: {
+        biotif: ['var(--font-biotif)']
+      },
+      colors: {
+        primary: '#1E1A20',
+        lightAccent: '#72838A',
+        secondary: '#00E788',
+        tertiary: '#1A151D',
+        quaternary: '#FFFDEF',
+
+        darkBlue : '#314756',
+      },
     },
   },
   plugins: [],
