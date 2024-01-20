@@ -5,6 +5,8 @@ import Navbar from '../components/navbar'
 import Library from '../components/library'
 import Song from '../components/song'
 import Data from '../lib/data'
+import AudioPlayer from '../components/audioplayer'
+
 export default function Home() {
   const [isLibrary, setIsLibrary] = useState(false)
   const [songs, setSongs] = useState(Data());
@@ -17,7 +19,7 @@ export default function Home() {
 
   const audioRef = useRef(null);
 
-  const timeHandler = (e: { target: { currentTime: any; duration: any; }; }) => {
+  const timeHandler = (e: React.SyntheticEvent<HTMLAudioElement, Event>) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
     setSongInfo({ ...songInfo, currentTime: current, duration: duration });
@@ -31,6 +33,23 @@ export default function Home() {
       <Library className={isLibrary ? 'opacity-100 translate-x-0' : ''} />
       <Navbar handleLibrary={handleLibrary} />
       <Song currentSong={currentSong} />
+      <AudioPlayer 
+      currentSong={currentSong}
+      isPlaying={isPlaying}
+      setIsPlaying={setIsPlaying}
+      audioRef={audioRef}
+      setSongInfo={setSongInfo}
+      songInfo={songInfo}
+      songs={songs}
+      setCurrentSong={setCurrentSong}
+      setSongs={setSongs}
+      />
+      <audio
+        onTimeUpdate={timeHandler}
+        onLoadedMetadata={timeHandler}
+        ref={audioRef}
+        src={currentSong.audio}
+      ></audio>
    </div>
   )
 }
