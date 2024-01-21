@@ -1,7 +1,7 @@
 import React, { useEffect, RefObject } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPause } from '@fortawesome/free-solid-svg-icons'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePause } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 import { Dispatch, SetStateAction} from 'react';
 import Player from '../lib/player'
 interface Song {
@@ -35,11 +35,16 @@ interface AudioPlayerProps {
         setCurrentSong,
         setSongs,
         }: AudioPlayerProps) => {
+    // const formatTime = (time: number): string => {
+    //     const minutes = Math.floor(time / 60);
+    //     const seconds = Math.floor(time % 60);
+    //     return `${minutes}:${seconds}`;
+    // }
     const formatTime = (time: number): string => {
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes}:${seconds}`;
-    }
+      return (
+        Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+      );
+    };
     useEffect(() => {
         const newSongs = songs.map((song) => {
           if (song.id === currentSong.id) {
@@ -108,15 +113,11 @@ interface AudioPlayerProps {
                 <p>{formatTime(songInfo.duration)}</p>
             </div>
             <div className='flex flex-row justify-between items-center'>
-            <button onClick={playHandler} className=' flex rounded-full bg-quaternary w-8 h-8 items-center justify-center text-center'>
-                        <FontAwesomeIcon icon={faPause} style={{color: "#1e1a20", fontSize:'20'}} />
-                </button>
-                <button onClick={playHandler} className='flex rounded-full bg-quaternary w-8 h-8 items-center justify-center text-center'>
-                        <FontAwesomeIcon icon={faPlay} style={{color: "#1e1a20", fontSize:'20'}} />
-                </button>
-                <button>
-                    
-                </button>
+                {isPlaying ? (
+                    <FontAwesomeIcon  icon={faCirclePause} className='w-8 h-8' onClick={playHandler} />
+                ) : (
+                    <FontAwesomeIcon  icon={faCirclePlay} className='w-8 h-8' onClick={playHandler} />
+                )}
             </div>
                 
                 
