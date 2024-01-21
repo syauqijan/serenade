@@ -12,7 +12,7 @@ const Song = ({ currentSong }: { currentSong: any }) => {
     // };
   return (
     <div
-      className="song-container bg-no-repeat bg-cover bg-bottom bg-[#662fb3] flex flex-col items-center justify-center min-h-[32rem] gap-7"
+      className="song-container bg-no-repeat bg-cover bg-bottom bg-[#662fb3] flex flex-col items-center justify-center min-h-[30rem] gap-7"
       style={{
         backgroundImage: `linear-gradient(0deg, rgba(31, 34, 37, 0.9), rgba(68, 72, 76, 0.8)),url(${currentSong.cover})`,
       }}

@@ -1,9 +1,10 @@
 import React, { useEffect, RefObject } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCirclePause } from '@fortawesome/free-solid-svg-icons'
+import { faCircleChevronLeft, faCirclePause } from '@fortawesome/free-solid-svg-icons'
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 import { Dispatch, SetStateAction} from 'react';
 import Player from '../lib/player'
+import { faCircleChevronRight } from "@fortawesome/free-solid-svg-icons/faCircleChevronRight";
 interface Song {
     name: string;
     cover: string;
@@ -100,24 +101,33 @@ interface AudioPlayerProps {
     
     return (
         <div className='bg-primary w-full h-40'>
-            <div className='flex flex-row items-center justify-center '>
+            <div className='flex flex-row items-center justify-center pt-10 gap-2'>
+              <div className="w-16 justify-center items-center text-center">
                 <p>{formatTime(songInfo.currentTime)}</p>
+              </div>
+             
                 <input
-                    className="song-input"
-                    type="range"
-                    min={0}
-                    max={songInfo.duration || 0}
-                    value={songInfo.currentTime}
-                    onChange={dragHandler}
-                />
+                      className="w-1/3 h-1.5 bg-white rounded-md cursor-pointer "
+                      type="range"
+                      min={0}
+                      max={songInfo.duration || 0}
+                      value={songInfo.currentTime}
+                      onChange={dragHandler}
+                  />
+          
+              <div className="w-16 justify-center items-center text-center">
                 <p>{formatTime(songInfo.duration)}</p>
+              </div>
+
             </div>
-            <div className='flex flex-row justify-between items-center'>
+            <div className='flex flex-row justify-center items-center gap-16 pt-6'>
+              <FontAwesomeIcon  icon={faCircleChevronLeft} className='w-8 h-8 cursor-pointer' onClick={() => skipTrackHandler('skip-back')} />
                 {isPlaying ? (
-                    <FontAwesomeIcon  icon={faCirclePause} className='w-8 h-8' onClick={playHandler} />
+                    <FontAwesomeIcon  icon={faCirclePause} className='w-11 h-11 cursor-pointer' onClick={playHandler} />
                 ) : (
-                    <FontAwesomeIcon  icon={faCirclePlay} className='w-8 h-8' onClick={playHandler} />
+                    <FontAwesomeIcon  icon={faCirclePlay} className='w-11 h-11 cursor-pointer' onClick={playHandler} />
                 )}
+                <FontAwesomeIcon  icon={faCircleChevronRight} className='w-8 h-8 cursor-pointer' onClick={() => skipTrackHandler('skip-forward')} />
             </div>
                 
                 
