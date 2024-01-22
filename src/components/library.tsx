@@ -1,8 +1,35 @@
-import React , {Fragment} from 'react';
+import React , {Fragment, useEffect, RefObject, Dispatch, SetStateAction} from 'react';
 import { Transition } from '@headlessui/react';
 import Songs from './songs';
 import songsArray from '@/lib/data';
-const Library = ({ className }: { className: string }) => {
+interface Song {
+  name: string;
+  cover: string;
+  artist: string;
+  audio: string;
+  id: string;
+  active: boolean;
+}
+interface AudioPlayerProps {
+  currentSong: Song;
+  songInfo: { currentTime: number; duration: number; };
+  isPlaying: boolean;
+  setIsPlaying: (isPlaying: boolean) => void;
+  audioRef: RefObject<HTMLAudioElement>;
+  setSongInfo: (songInfo: { currentTime: number; duration: number; }) => void;
+  songs: Song[];
+  setCurrentSong: Dispatch<SetStateAction<Song>>;
+  setSongs: Dispatch<SetStateAction<Song[]>>;
+}
+const Library = ({
+    songs,
+    setCurrentSong,
+    audioRef,
+    isPlaying,
+    setSongs,
+    className
+  }: AudioPlayerProps & {className?: string
+}) => {
   return (
     <Transition
       show={className ? true : false}
