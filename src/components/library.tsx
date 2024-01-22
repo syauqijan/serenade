@@ -1,6 +1,7 @@
 import React , {Fragment} from 'react';
 import { Transition } from '@headlessui/react';
-
+import Songs from './songs';
+import songsArray from '@/lib/data';
 const Library = ({ className }: { className: string }) => {
   return (
     <Transition
@@ -19,6 +20,28 @@ const Library = ({ className }: { className: string }) => {
         <hr  className='border-white/70 border-1  mb-5 mt-2 ml-8 mr-8' />
    
     </div>
+    <div className=' h-full overflow-hidden overflow-y-auto'>
+      {songsArray.map((song) => (
+          <Songs
+            song={song}
+            id={song.id}
+            currentSong={song}
+            songInfo={{ currentTime: 0, duration: 0 }}
+            isPlaying={false}
+            setIsPlaying={() => {}}
+            audioRef={{ current: null }}
+            setSongInfo={() => {}}
+            songs={songsArray}
+            setCurrentSong={() => {}}
+            setSongs={() => {}}
+
+
+
+          />
+      ))}
+    </div>
+    
+
 </div>
     </Transition>
   );

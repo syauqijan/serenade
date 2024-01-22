@@ -9,8 +9,8 @@ interface Song {
   active: boolean;
 }
 
-function chillHop() {
-    return [
+const songsArray= 
+    [
         {
           name: "Blessed",
           cover:
@@ -79,6 +79,6 @@ function chillHop() {
           active: false,
         },
       ];
-}
 
-export default chillHop;
+
+export default songsArray;
