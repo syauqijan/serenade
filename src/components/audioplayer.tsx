@@ -107,7 +107,7 @@ interface AudioPlayerProps {
               </div>
              
                 <input
-                      className="w-1/3 h-1.5 bg-white rounded-md cursor-pointer "
+                      className="w-1/3 h-1.5 rounded-md cursor-pointer bg-primary "
                       type="range"
                       min={0}
                       max={songInfo.duration || 0}
@@ -116,7 +116,7 @@ interface AudioPlayerProps {
                   />
           
               <div className="w-16 justify-center items-center text-center">
-                <p>{formatTime(songInfo.duration)}</p>
+                <p>{songInfo.duration? formatTime(songInfo.duration): "0:00"}</p>
               </div>
 
             </div>

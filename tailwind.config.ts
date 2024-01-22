@@ -24,7 +24,7 @@ const config: Config = {
         primary: '#1E1A20',
         lightAccent: '#72838A',
         secondary: '#00E788',
-        tertiary: '#1A151D',
+        tertiary: '#150C1A',
         quaternary: '#FFFDEF',
 
         darkBlue : '#314756',
