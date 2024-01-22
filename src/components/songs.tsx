@@ -45,6 +45,9 @@ const songs : FC<SongProps> = ({song}) => {
     //         }
     //     }
     // }
+    // const songHandler = () =>{
+    //     if()
+    // }
 
   return (
     <div className='h-32 flex flex-row ml-8 mr-8 mt-3 hover:bg-sky-700 hover:rounded-md cursor-pointer hover:transition-colors'>

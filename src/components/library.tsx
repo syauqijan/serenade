@@ -15,12 +15,12 @@ const Library = ({ className }: { className: string }) => {
       leaveTo="opacity-90 -translate-x-full"
     >
     <div className={`w-96 bg-tertiary h-full fixed ${className}`}>
-    <div className='h-24  justify-start flex flex-col '>
+    <div className='h-24 justify-start flex flex-col '>
         <h1 className='text-2xl pt-10 pl-10'>Library</h1>
         <hr  className='border-white/70 border-1  mb-5 mt-2 ml-8 mr-8' />
    
     </div>
-    <div className=' h-full overflow-hidden overflow-y-auto'>
+    <div className='overflow-y-auto  scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-100'>
       {songsArray.map((song) => (
           <Songs
             song={song}
