@@ -51,6 +51,7 @@ const Library = ({
       {songsArray.map((song) => (
           <Songs
             song={song}
+            key={song.id}
             id={song.id}
             currentSong={song}
             songInfo={{ currentTime: 0, duration: 0 }}
