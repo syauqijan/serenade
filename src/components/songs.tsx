@@ -31,7 +31,7 @@ interface SongProps {
     setCurrentSong: Dispatch<SetStateAction<Song>>;
     setSongs: Dispatch<SetStateAction<Song[]>>;
 }
-const songs : FC<SongProps> = ({song, currentSong, setSongs, setCurrentSong, isPlaying, audioRef, setIsPlaying}) => {
+const songs : FC<SongProps> = ({song, currentSong, setSongs, setCurrentSong, isPlaying, audioRef, setIsPlaying, songInfo, setSongInfo}) => {
 
 
     // const songHandler = () => {
@@ -61,22 +61,19 @@ const songs : FC<SongProps> = ({song, currentSong, setSongs, setCurrentSong, isP
             }
           });
           setSongs(newSongs);
+          console.log(isPlaying)
+          console.log(audioRef)
           Player(isPlaying, audioRef)
-          const playHandler = () => {
-            if (audioRef.current) {
-              if (isPlaying) {
-                audioRef.current.pause();
-                setIsPlaying(!isPlaying);
-              } else {
-                audioRef.current.play();
-                setIsPlaying(!isPlaying);
-              }
-            }
-          };
+          if (audioRef.current) {
+              audioRef.current.play();
+              setIsPlaying(true);
+
+          }
           
-          
+          console.log(audioRef.current)
           console.log(newSongs)
           console.log(song)
+          
           console.log(currentSong)
     }
 

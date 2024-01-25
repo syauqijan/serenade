@@ -27,6 +27,9 @@ const Library = ({
     audioRef,
     isPlaying,
     setSongs,
+    songInfo,
+    setSongInfo,
+    setIsPlaying,
     className
   }: AudioPlayerProps & {className?: string
 }) => {
@@ -54,14 +57,14 @@ const Library = ({
             key={song.id}
             id={song.id}
             currentSong={song}
-            songInfo={{ currentTime: 0, duration: 0 }}
-            isPlaying={false}
-            setIsPlaying={() => {}}
-            audioRef={{ current: null }}
-            setSongInfo={() => {}}
-            songs={songsArray}
-            setCurrentSong={() => {}}
-            setSongs={() => {}}
+            songInfo={songInfo}
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
+            audioRef={audioRef}
+            setSongInfo={setSongInfo}
+            songs={songs}
+            setCurrentSong={setCurrentSong}
+            setSongs={setSongs}
 
 
 

@@ -31,10 +31,14 @@ export default function Home() {
   return (
    <div className='bg-gradient-horizontal w-full h-screen '>
       <Library 
+        currentSong={currentSong}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        audioRef={audioRef}
+        setSongInfo={setSongInfo}
+        songInfo={songInfo}
         songs={songs}
         setCurrentSong={setCurrentSong}
-        audioRef={audioRef}
-        isPlaying={isPlaying}
         setSongs={setSongs}
         className={isLibrary ? 'opacity-100 translate-x-0' : ''} />
       <Navbar handleLibrary={handleLibrary} />
