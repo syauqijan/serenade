@@ -61,20 +61,13 @@ const songs : FC<SongProps> = ({song, currentSong, setSongs, setCurrentSong, isP
             }
           });
           setSongs(newSongs);
-          console.log(isPlaying)
-          console.log(audioRef)
           Player(isPlaying, audioRef)
           if (audioRef.current) {
               audioRef.current.play();
               setIsPlaying(true);
 
           }
-          
-          console.log(audioRef.current)
-          console.log(newSongs)
-          console.log(song)
-          
-          console.log(currentSong)
+
     }
 
   return (

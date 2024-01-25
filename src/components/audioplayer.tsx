@@ -74,8 +74,7 @@ interface AudioPlayerProps {
             setIsPlaying(!isPlaying);
           }
         }
-        console.log(isPlaying)
-        console.log(audioRef.current)
+        
       };
       
       const dragHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
