@@ -15,7 +15,7 @@ const navbar  = ({ handleLibrary }: { handleLibrary: () => void }) => {
         <Image src='/images/Serenade.png' alt="logo" width={128} height={128} />
       </div>
       <div>
-        <button className='w-32 h-10 rounded-md border-white border bg-primary flex flex-row gap-3 items-center justify-center hover:bg-darkAccent' onClick={handleLibrary}>
+        <button className='w-32 h-10 rounded-md border-white border bg-primary flex flex-row gap-3 items-center justify-center hover:bg-darkAccent transition-colors duration-200' onClick={handleLibrary}>
           Library
           <img src='/images/music.svg' alt="music" className='w-4 h-4' />
 

@@ -1,11 +1,13 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from 'next/image'
 import Navbar from '../components/navbar'
 import Library from '../components/library'
 import MainSong from '../components/mainSong'
 import songsArray from '../lib/data'
 import AudioPlayer from '../components/audioplayer'
+import GreetingsPage from "@/components/greetingsPage";
+import { Transition } from "@headlessui/react";
 
 export default function Home() {
   const [isLibrary, setIsLibrary] = useState(false)
@@ -27,10 +29,42 @@ export default function Home() {
   const handleLibrary = () => {
     setIsLibrary(!isLibrary)
   }
+  const [showMainPage, setShowMainPage] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowMainPage(true);
+    }, 1000); // Menunggu 3 detik sebelum menampilkan halaman utama
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
-   <div className='bg-gradient-horizontal w-full h-screen '>
-      <Library 
+   <div className='bg-gradient-horizontal w-full h-screen justify-center items-center '>
+      {/* <Transition
+        show={!showMainPage}
+        enter="transition-opacity duration-300"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-300"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <div className=" flex w-full h-full justify-center items-center text-center bg-gradient-to-r from-rightGradient to-leftGradient text-transparent bg-clip-text text-4xl font-bold animate-pulse">
+          Make Music Matter
+        </div>
+      </Transition> */}
+
+      <Transition
+        show={showMainPage}
+        enter="transition-opacity duration-1000"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-1000"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <Library 
         currentSong={currentSong}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
@@ -60,6 +94,8 @@ export default function Home() {
         ref={audioRef}
         src={currentSong.audio}
       ></audio>
+      </Transition>
+      
    </div>
   )
 }

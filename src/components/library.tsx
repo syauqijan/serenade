@@ -33,6 +33,8 @@ const Library = ({
     className
   }: AudioPlayerProps & {className?: string
 }) => {
+  // console.log(isPlaying)
+  // console.log(audioRef)
   return (
     <Transition
       show={className ? true : false}
@@ -44,7 +46,7 @@ const Library = ({
       leaveFrom="opacity-100 translate-x-0"
       leaveTo="opacity-90 -translate-x-full"
     >
-    <div className={`w-96 bg-tertiary h-full max-h-full fixed overflow-auto scrollbar-thin scrollbar-thumb-quaternary scrollbar-track-primary scrollbar-thumb-rounded-full  ${className}`}>
+    <div className={`w-96 bg-tertiary h-full max-h-full fixed overflow-auto scrollbar-thin scrollbar-thumb-quaternary scrollbar-track-tertiary scrollbar-thumb-rounded-full  ${className}`}>
     <div className='h-24 justify-start flex flex-col '>
         <h1 className='text-2xl pt-10 pl-10'>Library</h1>
         <hr  className='border-white/70 border-1  mb-5 mt-2 ml-8 mr-8' />
