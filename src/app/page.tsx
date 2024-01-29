@@ -10,7 +10,7 @@ import AudioPlayer from '../components/audioplayer'
 export default function Home() {
   const [isLibrary, setIsLibrary] = useState(false)
   const [songs, setSongs] = useState(songsArray);
-  const [currentSong, setCurrentSong] = useState(songs[1]);
+  const [currentSong, setCurrentSong] = useState(songs[6]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
