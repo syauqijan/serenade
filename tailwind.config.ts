@@ -26,13 +26,13 @@ const config: Config = {
         secondary: '#00E788',
         tertiary: '#150C1A',
         quaternary: '#FFFDEF',
-
+        darkAccent: '#8E6ED2',
         darkBlue : '#314756',
       },
     },
   },
   plugins: [
-    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 }
 export default config

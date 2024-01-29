@@ -1,4 +1,4 @@
-import React, {RefObject} from 'react'
+import React, {RefObject, useState} from 'react'
 import Player from '@/lib/player'
 import songsArray from '@/lib/data';
 import { Dispatch, SetStateAction} from 'react';
@@ -31,51 +31,42 @@ interface SongProps {
     setCurrentSong: Dispatch<SetStateAction<Song>>;
     setSongs: Dispatch<SetStateAction<Song[]>>;
 }
-const songs : FC<SongProps> = ({song, currentSong, setSongs, setCurrentSong, isPlaying, audioRef, setIsPlaying, songInfo, setSongInfo}) => {
-
-
-    // const songHandler = () => {
-    //     setCurrentSong(song)
-    //     const newSong = songs.map(song) =>{
-    //         if (id == song.id){
-    //             return{
-    //                 ..song,
-    //                 active:true
-    //             }
-    //         }
-    //     }
-    // }
+const songs : FC<SongProps> = ({song, currentSong, songs,setSongs, setCurrentSong, isPlaying, audioRef, setIsPlaying, songInfo, setSongInfo}) => {
+    const [activeSong, setActiveSong] = useState(null);
     const songHandler = () =>{
-        setCurrentSong(song)
-        const newSongs = songsArray.map((song) => {
-            if (song.id === currentSong.id) {
+       
+        const newSongs = songs.map((s) => {
+            if (s.id === song.id) {
               return {
-                ...song,
+                ...s,
                 active: true,
+                
               };
             } else {
               return {
-                ...song,
+                ...s,
                 active: false,
               };
             }
           });
           setSongs(newSongs);
+          
+          setCurrentSong(song)
           Player(isPlaying, audioRef)
           if (audioRef.current) {
               audioRef.current.play();
               setIsPlaying(true);
 
           }
+          console.log(newSongs)
+          console.log(songs)
           console.log(song.active)
           console.log(currentSong.active)
-          console.log(song.name)
-          console.log(currentSong.name)
-          console.log(newSongs)
+          
     }
 
   return (
-    <div className={`h-32 flex flex-row ml-8 mr-8 mt-3 hover:bg-primary hover:rounded-md cursor-pointer hover:transition-colors ${song.active===currentSong.active ? '' : 'hover:bg-primary hover:rounded-md'}`} onClick={songHandler}>
+    <div className={`h-32 flex flex-row ml-8 mr-8 mt-3 hover:bg-primary hover:rounded-md cursor-pointer hover:transition-colors ${song.active? 'bg-primary' : ''}`} onClick={()=>songHandler()}>
         <img className='w-24 h-24 ml-6 mt-4 mb-4  justify-center  rounded-md object-cover' src={song.cover} alt="Cover Art" />
         <div className='pl-5 justify-center flex flex-col'>
             <h2 className='text-lg'>{song.name}</h2>
