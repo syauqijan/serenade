@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-
 import localFont from 'next/font/local'
+import Head from 'next/head'
 
 const playfair = localFont({
   src: [
@@ -27,6 +27,10 @@ const biotif = localFont({
 export const metadata: Metadata = {
   title: 'Serenade',
   description: 'Make music matter',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  
 }
 
 export default function RootLayout({
@@ -36,6 +40,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" /> 
+        <title>Serenade</title> 
+      </Head>
       <body className={playfair.className}>{children}</body>
     </html>
   )
