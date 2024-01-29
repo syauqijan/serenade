@@ -39,7 +39,7 @@ const songsArray=
           audio: "https://mp3.chillhop.com/serve.php/?mp3=9071",
           color: ["#B442A1", "#F54F7A"],
           id: uuidv4(),
-          active: false,
+          active: true,
         },
         {
           name: "Indian Summer Rally",
@@ -75,7 +75,7 @@ const songsArray=
           artist: "Sundrenched",
           audio: "https://mp3.chillhop.com/serve.php/?mp3=30124",
           id: uuidv4(),
-          active: true,
+          active: false,
         },
       ];
 

@@ -10,7 +10,7 @@ import { Transition } from "@headlessui/react";
 export default function Home() {
   const [isLibrary, setIsLibrary] = useState(false)
   const [songs, setSongs] = useState(songsArray);
-  const [currentSong, setCurrentSong] = useState(songs[6]);
+  const [currentSong, setCurrentSong] = useState(songs[2]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
@@ -32,14 +32,14 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowMainPage(true);
-    }, 1000); // Menunggu 3 detik sebelum menampilkan halaman utama
+    }, 3000); 
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-   <div className='bg-gradient-horizontal w-full h-screen justify-center items-center '>
-      {/* <Transition
+   <div className='bg-gradient-horizontal w-full h-screen justify-center items-center overflow-hidden '>
+      <Transition
         show={!showMainPage}
         enter="transition-opacity duration-300"
         enterFrom="opacity-0"
@@ -51,7 +51,7 @@ export default function Home() {
         <div className=" flex w-full h-full justify-center items-center text-center bg-gradient-to-r from-rightGradient to-leftGradient text-transparent bg-clip-text text-4xl font-bold animate-pulse">
           Make Music Matter
         </div>
-      </Transition> */}
+      </Transition>
 
       <Transition
         show={showMainPage}
@@ -72,7 +72,7 @@ export default function Home() {
         songs={songs}
         setCurrentSong={setCurrentSong}
         setSongs={setSongs}
-        className={isLibrary ? 'opacity-100 translate-x-0' : ''} />
+        className={isLibrary ? 'opacity-100 ' : ''} />
       <Navbar handleLibrary={handleLibrary} />
       <MainSong currentSong={currentSong} />
       <AudioPlayer 

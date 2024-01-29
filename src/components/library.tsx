@@ -39,13 +39,13 @@ const Library = ({
       show={className ? true : false}
       as={Fragment}
       enter="transition-opacity transition-transform duration-300"
-      enterFrom="opacity-80 -translate-x-full"
+      enterFrom="opacity-50 -translate-x-full"
       enterTo="opacity-100 translate-x-0"
       leave="transition-opacity transition-transform duration-300"
       leaveFrom="opacity-100 translate-x-0"
       leaveTo="opacity-90 -translate-x-full"
     >
-    <div className={`w-96 bg-tertiary h-full max-h-full fixed overflow-auto scrollbar-thin scrollbar-thumb-quaternary scrollbar-track-tertiary scrollbar-thumb-rounded-full  ${className}`}>
+    <div className={`w-96 bg-tertiary h-full max-h-full fixed overflow-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-tertiary scrollbar-thumb-rounded-full  ${className}`}>
     <div className='h-24 justify-start flex flex-col '>
         <h1 className='text-2xl pt-10 pl-10'>Library</h1>
         <hr  className='border-white/70 border-1  mb-5 mt-2 ml-8 mr-8' />
