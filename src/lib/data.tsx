@@ -13,12 +13,12 @@ const songsArray=
     [
       
         {
-          
-          name: "Blessed",
+          name: "Growing Apart",
           cover:
-            "https://chillhop.com/wp-content/uploads/2022/04/73f23095038f6f023083520706f3e5345f5dd682-1024x1024.jpg",
-          artist: "Moods, Yasper",
-          audio: "https://mp3.chillhop.com/serve.php/?mp3=32859",
+            "https://chillhop.com/wp-content/uploads/2020/07/ff35dede32321a8aa0953809812941bcf8a6bd35-1024x1024.jpg",
+          artist: "Swørn",
+          audio: "https://mp3.chillhop.com/serve.php/?mp3=9219",
+          color: ["#BD3D76", "#551853"],
           id: uuidv4(),
           active: false,
         },
@@ -32,11 +32,12 @@ const songsArray=
           active: false,
         },
         {
-          name: "Morning View",
+          name: "Eastway",
           cover:
-            "https://chillhop.com/wp-content/uploads/2022/04/73f23095038f6f023083520706f3e5345f5dd682-1024x1024.jpg",
-          artist: "Enzalla",
-          audio: "https://mp3.chillhop.com/serve.php/?mp3=32839",
+            "https://chillhop.com/wp-content/uploads/2020/07/c572841e8431cebc120dffed4f92119f723dd954-1024x1024.jpg",
+          artist: "Dontcry, Nokiaa",
+          audio: "https://mp3.chillhop.com/serve.php/?mp3=9071",
+          color: ["#B442A1", "#F54F7A"],
           id: uuidv4(),
           active: false,
         },
