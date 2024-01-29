@@ -25,7 +25,7 @@ interface AudioPlayerProps {
     setSongs: Dispatch<SetStateAction<Song[]>>;
 }
 
-    const audioPlayer = ({
+    const AudioPlayer = ({
         currentSong,
         songInfo,
         isPlaying,
@@ -42,21 +42,22 @@ interface AudioPlayerProps {
       );
     };
     useEffect(() => {
-        const newSongs = songs.map((song) => {
-          if (song.id === currentSong.id) {
-            return {
-              ...song,
-              active: true,
-            };
-          } else {
-            return {
-              ...song,
-              active: false,
-            };
-          }
-        });
-        setSongs(newSongs);
-      }, [currentSong]);
+      const newSongs = songs.map((song) => {
+        if (song.id === currentSong.id) {
+          return {
+            ...song,
+            active: true,
+          };
+        } else {
+          return {
+            ...song,
+            active: false,
+          };
+        }
+      });
+      setSongs(newSongs);
+  }, [currentSong, songs, setSongs]);
+  
       
       //event handlers
       const playHandler = () => {
@@ -132,4 +133,4 @@ interface AudioPlayerProps {
     )
 }
 
-export default audioPlayer
+export default AudioPlayer

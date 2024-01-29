@@ -12,7 +12,7 @@ const navbar  = ({ handleLibrary }: { handleLibrary: () => void }) => {
       <div>
         <button className='w-32 h-10 rounded-md border-white border bg-primary flex flex-row gap-3 items-center justify-center hover:bg-darkAccent transition-colors duration-200' onClick={handleLibrary}>
           Library
-          <img src='/images/music.svg' alt="music" className='w-4 h-4' />
+          <Image src='/images/music.svg' alt="music"width={40} height={40} className='w-4 h-4' />
 
         </button>
       </div>
