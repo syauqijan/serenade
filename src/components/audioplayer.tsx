@@ -1,4 +1,4 @@
-import React, { useEffect, RefObject } from "react";
+import { useEffect, RefObject } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleChevronLeft, faCirclePause } from '@fortawesome/free-solid-svg-icons'
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons'

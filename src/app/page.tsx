@@ -1,12 +1,10 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import Image from 'next/image'
+import { useState, useRef, useEffect } from "react";
 import Navbar from '../components/navbar'
 import Library from '../components/library'
 import MainSong from '../components/mainSong'
 import songsArray from '../lib/data'
 import AudioPlayer from '../components/audioplayer'
-import GreetingsPage from "@/components/greetingsPage";
 import { Transition } from "@headlessui/react";
 
 export default function Home() {

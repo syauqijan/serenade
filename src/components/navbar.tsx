@@ -1,11 +1,6 @@
-import React, {useState} from 'react'
 import Image from 'next/image'
-import Library from './library'
 const navbar  = ({ handleLibrary }: { handleLibrary: () => void }) => {
-  // const [isLibrary, setIsLibrary] = useState(false)
-  // const handleLibrary = () => {
-  //   setIsLibrary(!isLibrary)
-  // }
+
   return (
     <div>
 
