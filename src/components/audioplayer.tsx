@@ -36,11 +36,6 @@ interface AudioPlayerProps {
         setCurrentSong,
         setSongs,
         }: AudioPlayerProps) => {
-    // const formatTime = (time: number): string => {
-    //     const minutes = Math.floor(time / 60);
-    //     const seconds = Math.floor(time % 60);
-    //     return `${minutes}:${seconds}`;
-    // }
     const formatTime = (time: number): string => {
       return (
         Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)

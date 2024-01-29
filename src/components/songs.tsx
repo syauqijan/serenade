@@ -1,6 +1,5 @@
 import React, {RefObject, useState} from 'react'
 import Player from '@/lib/player'
-import songsArray from '@/lib/data';
 import { Dispatch, SetStateAction} from 'react';
 import { FC } from 'react';
 
@@ -32,31 +31,21 @@ interface SongProps {
     setSongs: Dispatch<SetStateAction<Song[]>>;
 }
 const songs : FC<SongProps> = ({song, currentSong, songs,setSongs, setCurrentSong, isPlaying, audioRef, setIsPlaying, songInfo, setSongInfo}) => {
-    const [activeSong, setActiveSong] = useState(null);
     const songHandler = () =>{
-       
-        const newSongs = songs.map((s) => {
-          setCurrentSong(song)
-            if (s.id === song.id) {
-              return {
-                ...s,
-                active: true,
-                
-              };
-            } else {
-              return {
-                ...s,
-                active: false,
-              };
-            }
-          });
-          setSongs(newSongs);   
-          Player(isPlaying, audioRef)
-          if (audioRef.current) {
-              audioRef.current.play();
-              setIsPlaying(true);
-
-          }
+    setCurrentSong(song);
+    setSongs(
+      songs.map((s) => ({
+        ...s,
+        active: s.id === song.id}))
+    )
+    if (audioRef.current) {
+        audioRef.current.play()
+        setIsPlaying(true)
+    }
+    Player(true, audioRef)
+    console.log(isPlaying)
+    console.log(audioRef.current)
+    // Player(isPlaying, audioRef)
 
           
     }

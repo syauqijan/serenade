@@ -1,7 +1,6 @@
 import React , {Fragment, useEffect, RefObject, Dispatch, SetStateAction} from 'react';
 import { Transition } from '@headlessui/react';
 import Songs from './songs';
-import songsArray from '@/lib/data';
 interface Song {
   name: string;
   cover: string;
