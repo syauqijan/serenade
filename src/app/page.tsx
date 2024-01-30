@@ -48,7 +48,7 @@ export default function Home() {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className=" flex w-full h-full justify-center items-center text-center bg-gradient-to-r from-rightGradient to-leftGradient text-transparent bg-clip-text text-4xl font-bold animate-pulse">
+        <div className=" font-biotif absolute flex w-full h-full justify-center items-center text-center bg-gradient-to-r from-rightGradient to-leftGradient text-transparent bg-clip-text text-7xl font-bold animate-pulse">
           Make Music Matter
         </div>
       </Transition>
