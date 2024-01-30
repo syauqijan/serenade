@@ -18,7 +18,8 @@ const config: Config = {
         'gradient-horizontal': ['primary', 'secondary', 'var(--quaternary)'],
       },
       fontFamily: {
-        biotif: ['var(--font-biotif)']
+        biotif: ['var(--font-biotif)'],
+        fair: ['var(--font-playfair)'],
       },
       colors: {
         primary: '#1E1A20',

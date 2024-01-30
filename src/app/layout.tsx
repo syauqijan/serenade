@@ -44,7 +44,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" /> 
         <title>Serenade</title> 
       </Head>
-      <body className={playfair.className}>{children}</body>
+      <body className={biotif.className}>{children}</body>
     </html>
   )
 }
